@@ -8,8 +8,8 @@ import java.sql.SQLException;
 
 public class DatabaseConnection {
     private static final String URL = "jdbc:mysql://localhost:3306/vehicle_rental_system"; // Use your database name
-    private static final String USER = "your_username_here"; // Replace before running
-    private static final String PASSWORD = "your_password_here"; // Replace before running
+    private static final String USER = "root"; // 
+    private static final String PASSWORD = "123456"; 
 
     public static Connection getConnection() {
         Connection connection = null;
