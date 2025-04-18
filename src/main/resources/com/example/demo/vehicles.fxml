@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="480.0" prefWidth="650.0" stylesheets="@../../../Css/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.VehiclesController">
+    <children>
+        <Label layoutX="14.0" layoutY="14.0" text="Vehicle Management">
+            <font><Font name="Arial Black" size="18.0" /></font>
+        </Label>
+
+        <Label layoutX="14.0" layoutY="63.0" text="Brand:" />
+        <Label layoutX="14.0" layoutY="100.0" text="Model:" />
+        <Label layoutX="14.0" layoutY="140.0" text="Category:" />
+        <Label layoutX="14.0" layoutY="180.0" text="Rental Price:" />
+
+        <TextField fx:id="txtBrand" layoutX="126.0" layoutY="60.0" prefWidth="150.0" />
+        <TextField fx:id="txtModel" layoutX="126.0" layoutY="97.0" prefWidth="150.0" />
+        <TextField fx:id="txtCategory" layoutX="126.0" layoutY="137.0" prefWidth="150.0" />
+        <TextField fx:id="txtRentalPrice" layoutX="126.0" layoutY="177.0" prefWidth="150.0" />
+
+        <Button fx:id="btnAddVehicle" layoutX="300.0" layoutY="60.0" text="Add" onAction="#addVehicle" />
+        <Button fx:id="btnUpdateVehicle" layoutX="370.0" layoutY="60.0" text="Update" onAction="#updateVehicle" />
+        <Button fx:id="btnDeleteVehicle" layoutX="450.0" layoutY="60.0" text="Delete" onAction="#deleteVehicle" />
+        <TextField fx:id="txtSearch" layoutX="300.0" layoutY="100.0" promptText="Search by brand" />
+        <Button fx:id="btnSearch" layoutX="500.0" layoutY="100.0" text="Search" onAction="#searchVehicle" />
+
+        <TableView fx:id="vehicleTable" layoutX="14.0" layoutY="230.0" prefHeight="230.0" prefWidth="620.0" onMouseClicked="#handleRowSelect">
+            <columns>
+                <TableColumn fx:id="brandColumn" text="Brand" prefWidth="150.0" />
+                <TableColumn fx:id="modelColumn" text="Model" prefWidth="150.0" />
+                <TableColumn fx:id="categoryColumn" text="Category" prefWidth="100.0" />
+                <TableColumn fx:id="rentalPriceColumn" text="Rental Price" prefWidth="100.0" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

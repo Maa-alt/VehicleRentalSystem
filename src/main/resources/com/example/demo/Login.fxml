@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0"
+            stylesheets="@../../../Css/style.css"
+            xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.demo.LoginController"
+            styleClass="login-container">
+
+   <children>
+      <Label layoutX="248.0" layoutY="23.0" text="Login Page">
+         <font>
+            <Font name="Arial Black" size="18.0" />
+         </font>
+      </Label>
+
+      <TextField fx:id="txtUsername" layoutX="206.0" layoutY="155.0" promptText="Username" />
+      <PasswordField fx:id="txtPassword" layoutX="206.0" layoutY="200.0" promptText="Password" />
+      <ComboBox fx:id="cmbRole" layoutX="205.0" layoutY="248.0" prefHeight="46.0" prefWidth="175.0" promptText="Select Role" />
+      <Button fx:id="btnLogin" layoutX="264.0" layoutY="304.0" text="Login" onAction="#handleLogin" />
+      <Hyperlink fx:id="linkSignUp" layoutX="206.0" layoutY="335.0" text="Don't have an account? Sign Up" onAction="#handleSignUp" />
+      <Label fx:id="lblError" layoutX="273.0" layoutY="286.0" textFill="RED" />
+   </children>
+</AnchorPane>

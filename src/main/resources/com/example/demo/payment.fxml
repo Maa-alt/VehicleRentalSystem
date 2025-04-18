@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="paymentBillingAnchorPane" prefHeight="582.0" prefWidth="629.0"
+            stylesheets="@../../../Css/style.css"
+            xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.demo.PaymentsControllers">
+
+   <children>
+      <!-- Title -->
+      <Label layoutX="185.0" layoutY="28.0" text="Payment &amp; Billing">
+
+         <font>
+            <Font name="Arial Black" size="18.0" />
+         </font>
+      </Label>
+
+      <!-- Labels and TextFields -->
+      <Label layoutX="22.0" layoutY="85.0" text="Customer Name:" />
+      <TextField fx:id="txtCustomerName" layoutX="165.0" layoutY="82.0" />
+
+      <Label layoutX="22.0" layoutY="121.0" text="Booking ID:" />
+      <TextField fx:id="txtBooking_id" layoutX="165.0" layoutY="117.0" />
+
+      <Label layoutX="22.0" layoutY="153.0" text="Vehicle Model:" />
+      <TextField fx:id="txtvehicleModel" layoutX="165.0" layoutY="150.0" />
+
+      <Label layoutX="22.0" layoutY="191.0" text="Rental Duration (Days):" />
+      <TextField fx:id="txtRentalDuration" layoutX="165.0" layoutY="187.0" />
+
+      <Label layoutX="348.0" layoutY="85.0" text="Rental Fee:" />
+      <TextField fx:id="txtRentalFee" layoutX="482.0" layoutY="69.0" />
+
+      <Label layoutX="348.0" layoutY="121.0" text="Late Fees:" />
+      <TextField fx:id="txtLateFees" layoutX="482.0" layoutY="105.0" />
+
+      <Label layoutX="348.0" layoutY="153.0" text="Additional Services:" />
+      <TextField fx:id="txtAdditionalServices" layoutX="482.0" layoutY="146.0" />
+
+      <Label layoutX="348.0" layoutY="191.0" text="Total Amount:" />
+      <TextField fx:id="txtTotalAmount" layoutX="482.0" layoutY="187.0" />
+
+      <!-- Payment Method Section -->
+      <Label layoutX="217.0" layoutY="224.0" text="Payment Method">
+         <font>
+            <Font name="Arial Black" size="18.0" />
+         </font>
+      </Label>
+
+      <RadioButton fx:id="radioCash" layoutX="67.0" layoutY="261.0" mnemonicParsing="false" text="Cash">
+         <toggleGroup>
+            <ToggleGroup fx:id="paymentToggleGroup" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="radioCard" layoutX="256.0" layoutY="261.0" mnemonicParsing="false" text="Credit Card" toggleGroup="$paymentToggleGroup" />
+      <RadioButton fx:id="radioOnline" layoutX="433.0" layoutY="261.0" mnemonicParsing="false" text="Online (PayPal)" toggleGroup="$paymentToggleGroup" />
+
+      <!-- Buttons -->
+      <Button fx:id="btnGenerate" layoutX="65.0" layoutY="315.0" mnemonicParsing="false" onAction="#handleGenerateInvoice" text="Generate Invoice" />
+      <Button fx:id="btnPrint" layoutX="274.0" layoutY="315.0" mnemonicParsing="false" onAction="#handlePrintInvoice" text="Print Invoice" />
+      <Button fx:id="btnPay" layoutX="482.0" layoutY="315.0" mnemonicParsing="false" onAction="#handlePayment" text="Make Payment" />
+
+      <!-- TableView -->
+      <TableView fx:id="tableInfo" layoutX="150.0" layoutY="368.0" prefHeight="200.0" prefWidth="394.0">
+         <columns>
+            <TableColumn fx:id="booking_idColumn" prefWidth="93.6" text="Booking ID" />
+            <TableColumn fx:id="amountPaidColumn" prefWidth="98.4" text="Amount Paid" />
+            <TableColumn fx:id="paymentMethodColumn" prefWidth="120.0" text="Payment Method" />
+            <TableColumn fx:id="dateColumn" prefWidth="76.8" text="Date" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>
